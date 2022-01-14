@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 
 import { signout, isAuthenticated } from "../auth/helper";
 
-const currentTab = (history, path) => {
+export const currentTab = (history, path) => {
   if (history.location.pathname === path) {
     return { color: "#2ecc72" };
   } else {
@@ -14,7 +14,7 @@ const currentTab = (history, path) => {
 const Menu = ({ history, path }) => {
   return (
     <div>
-      <ul className="nav nav-tabs bg-dark">
+      <ul className="nav nav-tabs">
         <li className="nav-item">
           <Link
             style={currentTab(history, "/")}

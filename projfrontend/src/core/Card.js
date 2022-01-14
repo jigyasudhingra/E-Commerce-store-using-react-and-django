@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ImageHelper from "./helper/ImageHelper";
 import { Redirect } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 import { addItemToCart, removeItemFromCart } from "./helper/cartHelper";
 import { isAuthenticated } from "../auth/helper";
 
@@ -17,12 +18,14 @@ const Card = ({
   const cartTitle = product ? product.name : "A photo from pexels";
   const cartDescription = product ? product.description : "Default description";
   const cartPrice = product ? product.price : "Default";
+  let history = useHistory();
 
   const addToCart = () => {
     if (isAuthenticated()) {
       addItemToCart(product, () => setRedirect(true));
       console.log("Added to cart");
     } else {
+      history.push('signin');
       console.log("Login Please!");
     }
   };

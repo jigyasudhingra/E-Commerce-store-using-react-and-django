@@ -124,13 +124,10 @@ const Signup = () => {
   };
 
   return (
-    <Base title="Sign Up Page" description="A signup for LCO user">
+    <Base title="Sign Up Page" description="A signup for user">
       {successMessage()}
       {errorMessage()}
       {signUpForm()}
-      <p className="text-white text-center">
-        {JSON.stringify(values)}
-      </p>
     </Base>
   );
 };

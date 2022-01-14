@@ -66,12 +66,11 @@ export const isAuthenticated = () => {
 
 export const signout = (next) => {
   const userId = isAuthenticated() && isAuthenticated().user.id;
-
   console.log("USERID: ", userId);
 
   if (typeof window !== undefined) {
     localStorage.removeItem("jwt");
-    cartEmpty(() => {});
+    cartEmpty(() => { });
     //next();
 
     return fetch(`${API}user/logout/${userId}`, {

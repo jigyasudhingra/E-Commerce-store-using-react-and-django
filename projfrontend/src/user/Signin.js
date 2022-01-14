@@ -7,15 +7,14 @@ import { signin, authenticate, isAuthenticated } from "../auth/helper";
 const Signin = () => {
   const [values, setValues] = useState({
     name: "",
-    email: "ten@hitesh.com",
+    email: "jigyasudhingra@gmail.com",
     password: "12345",
     error: "",
     success: false,
     loading: false,
     didRedirect: false,
   });
-  const { name, email, password, error, success, loading, didRedirect } =
-    values;
+  const { name, email, password, error, success, loading, didRedirect } = values;
 
   const handleChange = (name) =>
     (event) => {
@@ -138,11 +137,7 @@ const Signin = () => {
   return (
     <Base title="Welcome to sign in page" description="A tshirt store">
       {loadingMessage()}
-
       {signInForm()}
-      <p className="text-center">
-        {JSON.stringify(values)}
-      </p>
       {performRedirect()}
     </Base>
   );

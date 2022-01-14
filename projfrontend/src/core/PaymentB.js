@@ -75,7 +75,7 @@ const PaymentB = ({
           } else {
             setInfo({ ...info, success: response.success, loading: false });
             console.log("PAYMENT SUCCESS");
-
+            alert('Payment Success');
             let product_names = "";
             products.forEach(function (item) {
               product_names += item.name + ", ";
@@ -136,6 +136,7 @@ const PaymentB = ({
               >
                 Buy Now
               </button>
+              <p>For testing, use this: 4009040000000009, Expiration Date: 12/26</p>
             </div>
           )
           : (
