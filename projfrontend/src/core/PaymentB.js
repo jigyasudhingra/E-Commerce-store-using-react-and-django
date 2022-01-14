@@ -55,7 +55,7 @@ const PaymentB = ({
   const onPurchase = () => {
     setInfo({ loading: true });
     let nonce;
-    let getNonce = info.instance.requestPaymentMethod().then((data) => {
+    let getNonce = info?.instance?.requestPaymentMethod().then((data) => {
       console.log("MYDATA", data);
       nonce = data.nonce;
       const paymentData = {

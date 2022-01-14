@@ -42,12 +42,12 @@ const Cart = () => {
     <Base title="Cart page" description="Welcome to checkout">
       <div className="row text-center">
         <div className="col-6">
-          {products.length > 0 ? (loadAllProducts(products)) : (
+          {products?.length > 0 ? (loadAllProducts(products)) : (
             <h4>No products</h4>
           )}
         </div>
         <div className="col-6">
-          {products.length > 0
+          {products?.length > 0
             ? (
               <PaymentB products={products} setReload={setReload} />
             )
